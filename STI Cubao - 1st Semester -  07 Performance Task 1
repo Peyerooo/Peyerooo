@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in); //Input
+        
+        int numberOfStudents; //Variables and Primitives
+        System.out.print("Enter the number of students: ");
+        numberOfStudents = scanner.nextInt();
+        
+        String[] studentNames = new String[numberOfStudents]; //Array to store student names and grades
+        double[] studentGrades = new double[numberOfStudents];
+        
+        for (int i = 0; i < numberOfStudents; i++) { //Input, Strings, Variables
+            System.out.print("\nEnter name for student " + (i + 1) + ": ");
+            studentNames[i] = scanner.next();
+            System.out.print("Enter grade for " + studentNames[i] + ": ");
+            studentGrades[i] = scanner.nextDouble();
+        }
+        
+        System.out.println("\n--- Student Grades ---"); //Output, Repetition, Expressions, Operators
+        for (int i = 0; i < numberOfStudents; i++) {
+            System.out.println(studentNames[i] + ": " + studentGrades[i]);
+        }
+        
+        System.out.print("\nEnter the passing grade: "); //Selection and Branching
+        double gradeThreshold = scanner.nextDouble();
+        System.out.println("\nStudents who scored above " + gradeThreshold + ":");
+        for (int i = 0; i < numberOfStudents; i++) {
+            if (studentGrades[i] > gradeThreshold) {
+                System.out.println(studentNames[i]);
+            }
+        }
+        
+        scanner.close();
+    }
+}
